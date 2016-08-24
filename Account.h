@@ -1,5 +1,5 @@
-#pragma once
-namespace Prog//пространство имен
+п»ї#pragma once
+namespace Prog//РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ
 {
 	typedef unsigned int ui;
 	class Account

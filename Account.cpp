@@ -1,14 +1,14 @@
-#include "Account.h"
-namespace Prog {//пространство имен
+п»ї#include "Account.h"
+namespace Prog {//РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ
 
 
-	Account::Account(void)//конструктор по умолчанию
+	Account::Account(void)//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	{
 		Name = " ";
 		ID = "0";
 		Balance = 0;
 	}
-	Account::Account(char* id, char* name, ui balance)//для указания параметров в конструкторе
+	Account::Account(char* id, char* name, ui balance)//РґР»СЏ СѓРєР°Р·Р°РЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ РІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ
 	{
 		ID = id;
 		Name = name;

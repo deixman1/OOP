@@ -1,4 +1,4 @@
-#include "Find.h"
+п»ї#include "Find.h"
 #include <iostream>
 #include <time.h>
 using namespace std;
@@ -17,7 +17,7 @@ namespace p
 	{
 		srand(time(NULL));
 		for (int i(0); i < n; i++) {
-			arr[i] = rand();//в каждую яйчейку записываем i+1 числ
+			arr[i] = rand();//РІ РєР°Р¶РґСѓСЋ СЏР№С‡РµР№РєСѓ Р·Р°РїРёСЃС‹РІР°РµРј i+1 С‡РёСЃР»
 		}
 	}
 	void Arr::getprarr(int* arr, int n) {
@@ -43,24 +43,24 @@ namespace p
 			find(arr, element, left, index);
 		else find(arr, element, index, right);
 	}
-	void Arr::setQuickSort(int* arr, int l, int r)//создаем функцию сортировки. l принимает левый элемент. r правый.
+	void Arr::setQuickSort(int* arr, int l, int r)//СЃРѕР·РґР°РµРј С„СѓРЅРєС†РёСЋ СЃРѕСЂС‚РёСЂРѕРІРєРё. l РїСЂРёРЅРёРјР°РµС‚ Р»РµРІС‹Р№ СЌР»РµРјРµРЅС‚. r РїСЂР°РІС‹Р№.
 	{
 		int i, j;
-		i = l;//i присваиваем левый
-		j = r;//j присваеваем правый
-		int middle = arr[(i + j) / 2];//находим средний элемент массива и присваиваем middle
+		i = l;//i РїСЂРёСЃРІР°РёРІР°РµРј Р»РµРІС‹Р№
+		j = r;//j РїСЂРёСЃРІР°РµРІР°РµРј РїСЂР°РІС‹Р№
+		int middle = arr[(i + j) / 2];//РЅР°С…РѕРґРёРј СЃСЂРµРґРЅРёР№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° Рё РїСЂРёСЃРІР°РёРІР°РµРј middle
 		do {
-			while (middle > arr[i]) i++;//i переносится в право
-			while (middle < arr[j]) j--;//j переносится в лево
-			if (i <= j) {//если не выполняется while
-				swap(arr[i], arr[j]);//меняем значение переменных
-									 //сдвигаем
+			while (middle > arr[i]) i++;//i РїРµСЂРµРЅРѕСЃРёС‚СЃСЏ РІ РїСЂР°РІРѕ
+			while (middle < arr[j]) j--;//j РїРµСЂРµРЅРѕСЃРёС‚СЃСЏ РІ Р»РµРІРѕ
+			if (i <= j) {//РµСЃР»Рё РЅРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ while
+				swap(arr[i], arr[j]);//РјРµРЅСЏРµРј Р·РЅР°С‡РµРЅРёРµ РїРµСЂРµРјРµРЅРЅС‹С…
+									 //СЃРґРІРёРіР°РµРј
 				i++;
 				j--;
 			}
-		} while (i < j);//i < j выполняется цикл
-		if (i < r) Arr::setQuickSort(arr, i, r);//рассматриваем правую часть
-		if (j > l) Arr::setQuickSort(arr, l, j);//рассматриваем левую часть
+		} while (i < j);//i < j РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ С†РёРєР»
+		if (i < r) Arr::setQuickSort(arr, i, r);//СЂР°СЃСЃРјР°С‚СЂРёРІР°РµРј РїСЂР°РІСѓСЋ С‡Р°СЃС‚СЊ
+		if (j > l) Arr::setQuickSort(arr, l, j);//СЂР°СЃСЃРјР°С‚СЂРёРІР°РµРј Р»РµРІСѓСЋ С‡Р°СЃС‚СЊ
 	}
 	Arr::~Arr(void)
 	{

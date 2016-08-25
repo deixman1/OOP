@@ -11,8 +11,6 @@ namespace p
 		int* setmemori(int* arr, int n);
 		void setarr(int* arr,int n);
 		void getprarr(int* arr, int n);
-		auto find(int* arr, int element, int left, int right) -> decltype(arr);
-		void setQuickSort(int* arr, int l, int r);
 		~Arr(void);
 	};
 	class Find :public Arr
@@ -21,7 +19,7 @@ namespace p
 		
 	public:
 		Find(void);
-		
+		auto find(int* arr, int element, int left, int right) -> decltype(arr);
 		~Find(void);
 	};
 	class Sort :public Find
@@ -29,7 +27,7 @@ namespace p
 	private:
 	public:
 		Sort(void);
-
+		void setQuickSort(int* arr, int l, int r);
 		~Sort(void);
 	};
 }

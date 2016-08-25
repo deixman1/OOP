@@ -1,4 +1,4 @@
-#include "Product.h"
+ï»¿#include "Product.h"
 #include <iostream>
 using namespace std;
 
@@ -69,11 +69,11 @@ namespace p
 	}
 	void Check::prinfo()
 	{
-		cout <<"Òîâàð: " <<getname() <<"."<<endl << "Öåíà: " << getcen() << " ðóá." << endl << "Âåñ: " << getkg() <<" êã."<< endl<<endl<<endl;
+		cout <<"Ð¢Ð¾Ð²Ð°Ñ€: " <<getname() <<"."<<endl << "Ð¦ÐµÐ½Ð°: " << getcen() << " Ñ€ÑƒÐ±." << endl << "Ð’ÐµÑ: " << getkg() <<" ÐºÐ³."<< endl<<endl<<endl;
 	}
 	void Check::prbuy()
 	{
-		cout <<"Òîâàðà êóïëåíî: " <<getnum() <<"øò."<<endl << "Íà ñóììó: " << getcenall() << " ðóá." << endl << "Îáùèé âåñ: " << getkgall() <<" êã."<< endl;
+		cout <<"Ð¢Ð¾Ð²Ð°Ñ€Ð° ÐºÑƒÐ¿Ð»ÐµÐ½Ð¾: " <<getnum() <<"ÑˆÑ‚."<<endl << "ÐÐ° ÑÑƒÐ¼Ð¼Ñƒ: " << getcenall() << " Ñ€ÑƒÐ±." << endl << "ÐžÐ±Ñ‰Ð¸Ð¹ Ð²ÐµÑ: " << getkgall() <<" ÐºÐ³."<< endl;
 	}
 
 	Buy::~Buy(void) {};

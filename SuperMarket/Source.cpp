@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include "Product.h"
 using namespace std;
@@ -10,7 +10,7 @@ int main(int argc,char** argv[])
 {
 	setlocale(LC_ALL, "Russian");
 	Check a;
-	a.setname("Уральские пельмени");
+	a.setname("вЂќСЂР°Р»СЊСЃРєРёРµ РїРµР»СЊРјРµРЅРё");
 	a.setcen(12);
 	a.setkg(1);
 	a.setnum(30);

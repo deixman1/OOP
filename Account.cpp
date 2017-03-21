@@ -5,7 +5,7 @@ namespace Prog {//пространство имен
 	Account::Account(void)//конструктор по умолчанию
 	{
 		Name = " ";
-		ID = "0";
+		ID = "11231234"; //suck and suck and suck and suck and 
 		Balance = 0;
 	}
 	Account::Account(char* id, char* name, ui balance)//для указания параметров в конструкторе
